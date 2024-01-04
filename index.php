@@ -21,20 +21,40 @@ $user_avatar = 'img/user.jpg';
             <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
         </a>
         <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
-            <input type="search" name="search" placeholder="Поиск лота">
+            <label>
+                <input type="search" name="search" placeholder="Поиск лота">
+            </label>
             <input class="main-header__search-btn" type="submit" name="find" value="Найти">
         </form>
-        <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
+        <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
+<?php if($is_auth) {print("
+<div class='user-menu__image'>
+  <img src='$user_avatar' width='40' height='40' alt='Пользователь'>
+      </div>
+  <div class>
+<p>$user_name</p>
+</div>'
+"); }else{
+    print ("
+        <ul class='ser-menu__list'>
+<li class='user-menu__item'>
+<a href='#'>Регистрация</a>
+</li>
+<li class='user-menu__item'>
+<a href='#'>Вход</a>
+</li>
 
+    ");
+}?>
         <!-- здесь должен быть PHP код для показа аватара пользователя -->
 
         </nav>
     </div>
 </header>
 
-<main class="container">
+<main class='container">
     <section class="promo">
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
